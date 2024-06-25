@@ -1,5 +1,5 @@
 import datasets
-from mteb.abstasks import AbsTaskRetrieval, CrosslingualTask, TaskMetadata
+from mteb.abstasks import AbsTaskRetrieval, MultilingualTask, TaskMetadata
 
 from mteb_custom_tasks import utils
 
@@ -11,7 +11,7 @@ _LANGUAGES_SETS = _LANGUAGES_PAIRS | _LANGUAGES_TRIPLETS
 _EVAL_SPLITS = ["test"]
 
 
-class BelebelePlusRetrieval(CrosslingualTask, AbsTaskRetrieval):
+class BelebelePlusRetrieval(MultilingualTask, AbsTaskRetrieval):
     metadata = TaskMetadata(
         name="BelebelePlusRetrieval",
         dataset={

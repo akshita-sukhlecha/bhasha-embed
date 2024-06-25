@@ -1,5 +1,5 @@
 import datasets
-from mteb.abstasks import AbsTaskRetrieval, CrosslingualTask, TaskMetadata
+from mteb.abstasks import AbsTaskRetrieval, MultilingualTask, TaskMetadata
 
 from mteb_custom_tasks import utils
 
@@ -11,7 +11,7 @@ _LANGUAGES_SETS = _LANGUAGES_PAIRS | _LANGUAGES_TRIPLETS
 
 # Note: lang_pair "eng_Latn-hin_Deva" means corpus is in eng_Latn and queries in hin_Deva.
 
-class XQuADPlusRetrieval(CrosslingualTask, AbsTaskRetrieval):
+class XQuADPlusRetrieval(MultilingualTask, AbsTaskRetrieval):
     metadata = TaskMetadata(
         name="XQuADPlusRetrieval",
         dataset={

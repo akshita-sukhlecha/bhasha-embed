@@ -1,5 +1,5 @@
 import json
-import os.path
+import os
 
 import mteb
 from sentence_transformers import SentenceTransformer
@@ -90,9 +90,21 @@ for lang_set in mix_lingual_langs_3:
 
 #################################### Evaluation #####################################
 
-model_id = "AkshitaS/Hinglish-embedding-base"  # "intfloat/multilingual-e5-base"
-model = SentenceTransformer(model_id)
-output_folder = "results/" + model_id.replace("/", "-")
+
+models = [
+    {"name": "AkshitaS/Hinglish-embedding-base", "revision": ""},
+    {"name": "intfloat/multilingual-e5-base", "revision": "d13f1b27baf31030b7fd040960d60d909913633f"},
+    {"name": "intfloat/multilingual-e5-large", "revision": "4dc6d853a804b9c8886ede6dda8a073b7dc08a81"},
+    {"name": "sentence-transformers/LaBSE", "revision": "e34fab64a3011d2176c99545a93d5cbddc9a91b7"},
+    {"name": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+     "revision": "79f2382ceacceacdf38563d7c5d16b9ff8d725d6"}
+]
+model_idx = 0
+
+model_name, model_revision = models[model_idx]["name"], models[model_idx]["revision"]
+model = mteb.get_model(model_name, revision=model_revision)
+output_folder = "results/" + model_name.replace("/", "-")
+
 
 results = {}
 os.makedirs(output_folder, exist_ok=True)
