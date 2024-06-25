@@ -1,0 +1,3 @@
+datasets
+mteb
+sentence_transformers
