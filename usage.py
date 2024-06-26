@@ -1,15 +1,15 @@
 queries = [
-    "मूलचंद ने कानून की पढ़ाई की और ३० की उम्र में राजनीति से जुड़ गए",
-    "Moolchand studied law and became a politician at the age of 30.",
-    "Moolchand ne kanoon ki padhai kari aur 30 ki umar mein rajneeti se jud gaye"
+    "प्रणव ने कानून की पढ़ाई की और ३० की उम्र में राजनीति से जुड़ गए",
+    "Pranav studied law and became a politician at the age of 30.",
+    "Pranav ne kanoon ki padhai kari aur 30 ki umar mein rajneeti se jud gaye"
 ]
 documents = [
-    "मूलचंद ने कानून की पढ़ाई की और ३० की उम्र में राजनीति से जुड़ गए",
-    "Moolchand studied law and became a politician at the age of 30.",
-    "Moolchand ne kanoon ki padhai kari aur 30 ki umar mein rajneeti se jud gaye",
-    "मूलचंद का जन्म राजनीतिज्ञों के परिवार में हुआ था",
-    "Moolchand was born in a family of politicians",
-    "Moolchand ka janm rajneetigyon ke parivar mein hua tha"
+    "प्रणव ने कानून की पढ़ाई की और ३० की उम्र में राजनीति से जुड़ गए",
+    "Pranav studied law and became a politician at the age of 30.",
+    "Pranav ne kanoon ki padhai kari aur 30 ki umar mein rajneeti se jud gaye",
+    "प्रणव का जन्म राजनीतिज्ञों के परिवार में हुआ था",
+    "Pranav was born in a family of politicians",
+    "Pranav ka janm rajneetigyon ke parivar mein hua tha"
 ]
 
 ################### Using Sentence Transformers ###################

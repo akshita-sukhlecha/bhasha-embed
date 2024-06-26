@@ -30,7 +30,7 @@ print("CASE 1 : \n\t"
       "c. the related sentence translated to English \n\t"
       "Ideal similarity score : a > b == c \n")
 
-en_name, hi_name = ("Moolchand", "मूलचंद")
+en_name, hi_name = ("Pranav", "प्रणव")
 samples = [
     {
         "query": f"{hi_name} ने कानून की पढ़ाई की और ३० की उम्र में राजनीति से जुड़ गए",
