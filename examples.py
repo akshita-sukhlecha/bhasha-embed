@@ -1,10 +1,10 @@
-# pip install sentence-transformers numpy
-
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-model_name = "intfloat/multilingual-e5-base"  # "AkshitaS/Hinglish-embedding-base"
-query_prefix, corpus_prefix = "query: ", "query: "
+# pip install sentence-transformers numpy
+
+model_name = "AkshitaS/Hinglish-embedding-base"  # "intfloat/multilingual-e5-base"
+query_prefix, corpus_prefix = "", ""  # "query: ", "query: "
 model = SentenceTransformer(model_name)
 
 
