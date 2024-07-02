@@ -1,0 +1,3 @@
+datasets==2.19.1
+mteb==1.12.50
+sentence_transformers==3.0.0
