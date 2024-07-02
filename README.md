@@ -6,7 +6,7 @@ There are many multilingual embedding models which work well for Hindi and Engli
 1. **Romanized Hindi support**: This is the first embedding model to support Romanized Hindi (transliterated Hindi / hin_Latn).
 2. **Cross-lingual alignment**: This model outputs language-agnostic embedding. This enables querying a multilingual candidate pool containing a mix of Hindi, English and Romanised Hindi texts.
 
-
+<br>
 
 ## <font color="#488AC7"> Model Details </font>
 - **Supported Languages:** Hindi, English, Romanised Hindi
@@ -23,7 +23,7 @@ There are many multilingual embedding models which work well for Hindi and Engli
 - **Hugging Face:** [link](https://huggingface.co/AkshitaS/bhasha-embed-v0)
 - **Developer:** [Akshita Sukhlecha](https://www.linkedin.com/in/akshita-sukhlecha/)
 
----
+<br>
 
 ## <font color="#488AC7"> Results </font>
 
@@ -35,11 +35,11 @@ There are many multilingual embedding models which work well for Hindi and Engli
 <b>Results for Romanised Hindi tasks</b> : Tasks with texts in Romanised Hindi  
 <img src="assets/results_hin_latn.png" width=600>
 
-<b>Results for retrieval tasks with multilingual corpus</b> : Retrieval task with corpus containing texts in Hindi, English as well as Romanised Hindi 
+<b>Results for retrieval tasks with multilingual corpus</b> : Retrieval task with corpus containing texts in Hindi, English as well as Romanised Hindi  
 <img src="assets/results_retrieval_belebele.png" width=400>
 
-<b>Results for Hindi tasks</b> : Tasks with texts in Hindi (Devanagari script)
-<img src="assets/results_hindi.png" width=800>
+<b>Results for Hindi tasks</b> : Tasks with texts in Hindi (Devanagari script)  
+<img src="assets/results_hindi.png" width=700>
 
 
 ### Additional information
@@ -47,14 +47,13 @@ There are many multilingual embedding models which work well for Hindi and Engli
 - hin_Latn tasks: Most hin_Latn tasks have been created by transliterating hindi texts using [indic-trans library](https://github.com/libindic/indic-trans)
 - Detailed results: [github_link](/eval/results/eval_results.csv)
 
----
+<br>
 
 ## <font color="#488AC7"> Sample outputs </font>
 
 ### Example 1
 
 <img src="assets/example_1.png" width=800>
-
 
 ### Example 2
 
@@ -68,8 +67,7 @@ There are many multilingual embedding models which work well for Hindi and Engli
 
 <img src="assets/example_4.png" width=800>
 
-
----
+<br>
 
 ## <font color="#488AC7"> Scripts </font>
 
@@ -88,11 +86,9 @@ Script to encode queries and passages and compute similarity scores using Senten
 1. `pip install sentence-transformers numpy`
 2. `python usage.py`
 
+<br>
 
----
-
-
-### Citation
+## Citation
 To cite this model:
 ```
 @misc{sukhlecha_2024_bhasha_embed_v0,
