@@ -90,7 +90,7 @@ for lang_set in mix_lingual_langs_3:
 
 
 models = [
-    {"name": "AkshitaS/Hinglish-embedding-base", "revision": "9150ff6936915064296fe5c51430327fcb900400"},
+    {"name": "AkshitaS/bhasha-embed-v0", "revision": "f4aa60c473d434333c824218291f719bd6d65444"},
     {"name": "intfloat/multilingual-e5-base", "revision": "d13f1b27baf31030b7fd040960d60d909913633f"},
     {"name": "intfloat/multilingual-e5-large", "revision": "4dc6d853a804b9c8886ede6dda8a073b7dc08a81"},
     {"name": "sentence-transformers/LaBSE", "revision": "e34fab64a3011d2176c99545a93d5cbddc9a91b7"},

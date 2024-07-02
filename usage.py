@@ -14,23 +14,29 @@ documents = [
 
 ################### Using Sentence Transformers ###################
 
-# pip install sentence-transformers
+# pip install sentence-transformers numpy
 
+import numpy as np
 from sentence_transformers import SentenceTransformer
 
-model = SentenceTransformer("AkshitaS/Hinglish-embedding-base")
+model = SentenceTransformer("AkshitaS/bhasha-embed-v0")
+
 query_embeddings = model.encode(queries, normalize_embeddings=True)
 document_embeddings = model.encode(documents, normalize_embeddings=True)
 
-scores = (query_embeddings @ document_embeddings.T)
-print(scores.shape)
+similarity_matrix = (query_embeddings @ document_embeddings.T)
+print(similarity_matrix.shape)
 # (3, 6)
-print(scores)
+print(np.round(similarity_matrix, 2))
+#[[1.00  0.97  0.97  0.92  0.90  0.91]
+# [0.97  1.00  0.96  0.90  0.91  0.91]
+# [0.97  0.96  1.00  0.89  0.90  0.92]]
 
 ########################## Using Transformers ###################
 
-## pip install transformers torch
+## pip install transformers torch numpy
 
+# import numpy as np
 # from torch import Tensor
 # import torch.nn.functional as F
 # from transformers import AutoTokenizer, AutoModel
@@ -41,15 +47,22 @@ print(scores)
 #     return last_hidden.sum(dim=1) / attention_mask.sum(dim=1)[..., None]
 #
 #
-# model_id = "AkshitaS/Hinglish-embedding-base"
+# model_id = "AkshitaS/bhasha-embed-v0"
 # tokenizer = AutoTokenizer.from_pretrained(model_id)
 # model = AutoModel.from_pretrained(model_id)
+#
 # input_texts = queries + documents
 # batch_dict = tokenizer(input_texts, padding=True, truncation=True, return_tensors='pt')
 # outputs = model(**batch_dict)
 # embeddings = average_pool(outputs.last_hidden_state, batch_dict['attention_mask'])
 #
 # embeddings = F.normalize(embeddings, p=2, dim=1)
-# scores = (embeddings[:len(queries)] @ embeddings[len(queries):].T)
-# print(scores)
+# similarity_matrix = (embeddings[:len(queries)] @ embeddings[len(queries):].T)
+# print(similarity_matrix.shape)
+# # (3, 6)
+# print(np.round(similarity_matrix, 2))
+# #[[1.00  0.97  0.97  0.92  0.90  0.91]
+# # [0.97  1.00  0.96  0.90  0.91  0.91]
+# # [0.97  0.96  1.00  0.89  0.90  0.92]]
+
 
