@@ -57,7 +57,7 @@ print(np.round(similarity_matrix, 2))
 # embeddings = average_pool(outputs.last_hidden_state, batch_dict['attention_mask'])
 #
 # embeddings = F.normalize(embeddings, p=2, dim=1)
-# similarity_matrix = (embeddings[:len(queries)] @ embeddings[len(queries):].T)
+# similarity_matrix = (embeddings[:len(queries)] @ embeddings[len(queries):].T).detach().numpy()
 # print(similarity_matrix.shape)
 # # (3, 6)
 # print(np.round(similarity_matrix, 2))
