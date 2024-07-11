@@ -1,17 +1,15 @@
-import os
 import json
 import pandas as pd
 
-base_path = "./"
-files = os.listdir(base_path)
-
 all_results = {}
-for file in files:
-    if file.startswith("results-"):
-        model_name = file.replace(".json", "").replace("results-", "")
-        with open(base_path + file) as fp:
-            results = json.load(fp)
-        all_results[model_name] = results
+base_path = "./"
+models = ["bhasha-embed-v0", "paraphrase-multilingual-mpnet-base-v2", "LaBSE", "multilingual-e5-base",
+          "multilingual-e5-large", "muril-base-cased", "IndicBERTv2-MLM-only"]
+for model_name in models:
+    file = "results-" + model_name + ".json"
+    with open(base_path + file) as fp:
+        results = json.load(fp)
+    all_results[model_name] = results
 
 norm_results = []
 for task_type, x in all_results['bhasha-embed-v0'].items():
