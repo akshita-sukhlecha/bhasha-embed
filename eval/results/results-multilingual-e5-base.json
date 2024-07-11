@@ -1,0 +1,115 @@
+{
+    "retrieval": {
+        "hin_Deva-hin_Deva": {
+            "XPQARetrieval": 0.70458,
+            "BelebelePlusRetrieval": 0.88887,
+            "MLQAPlusRetrieval": 0.66658,
+            "XQuADPlusRetrieval": 0.95313
+        },
+        "eng_Latn-eng_Latn": {
+            "NFCorpus": 0.32487,
+            "MLQuestions": 0.62217,
+            "BelebelePlusRetrieval": 0.95793,
+            "MLQAPlusRetrieval": 0.72884,
+            "XQuADPlusRetrieval": 0.98019
+        },
+        "eng_Latn-hin_Deva": {
+            "XPQARetrieval": 0.27466,
+            "BelebelePlusRetrieval": 0.81051,
+            "MLQAPlusRetrieval": 0.56834,
+            "XQuADPlusRetrieval": 0.90517
+        },
+        "hin_Deva-eng_Latn": {
+            "XPQARetrieval": 0.63667,
+            "BelebelePlusRetrieval": 0.88442,
+            "MLQAPlusRetrieval": 0.63011,
+            "XQuADPlusRetrieval": 0.93868
+        },
+        "eng_Latn-hin_Deva-eng_Latn": {
+            "BelebelePlusRetrieval": 0.83366,
+            "MLQAPlusRetrieval": 0.64078,
+            "XQuADPlusRetrieval": 0.87621
+        },
+        "eng_Latn-hin_Deva-hin_Deva": {
+            "BelebelePlusRetrieval": 0.70282,
+            "MLQAPlusRetrieval": 0.46936,
+            "XQuADPlusRetrieval": 0.76742
+        },
+        "hin_Latn-hin_Latn": {
+            "BelebelePlusRetrieval": 0.55051,
+            "MLQAPlusRetrieval": 0.28152,
+            "XQuADPlusRetrieval": 0.66566
+        },
+        "hin_Latn-hin_Deva": {
+            "BelebelePlusRetrieval": 0.50909,
+            "MLQAPlusRetrieval": 0.28123,
+            "XQuADPlusRetrieval": 0.61581
+        },
+        "hin_Latn-eng_Latn": {
+            "BelebelePlusRetrieval": 0.60456,
+            "MLQAPlusRetrieval": 0.35773,
+            "XQuADPlusRetrieval": 0.64591
+        },
+        "hin_Deva-hin_Latn": {
+            "BelebelePlusRetrieval": 0.35035,
+            "MLQAPlusRetrieval": 0.13414,
+            "XQuADPlusRetrieval": 0.40775
+        },
+        "eng_Latn-hin_Latn": {
+            "BelebelePlusRetrieval": 0.38582,
+            "MLQAPlusRetrieval": 0.12925,
+            "XQuADPlusRetrieval": 0.32288
+        },
+        "eng_Latn-hin_Deva-hin_Latn-eng_Latn": {
+            "BelebelePlusRetrieval": 0.75805,
+            "MLQAPlusRetrieval": 0.60347,
+            "XQuADPlusRetrieval": 0.7764
+        },
+        "eng_Latn-hin_Deva-hin_Latn-hin_Deva": {
+            "BelebelePlusRetrieval": 0.61473,
+            "MLQAPlusRetrieval": 0.3777,
+            "XQuADPlusRetrieval": 0.66689
+        },
+        "eng_Latn-hin_Deva-hin_Latn-hin_Latn": {
+            "BelebelePlusRetrieval": 0.27783,
+            "MLQAPlusRetrieval": 0.13629,
+            "XQuADPlusRetrieval": 0.31827
+        }
+    },
+    "bitext": {
+        "eng_Latn-hin_Deva": {
+            "IndicGenBenchFloresBitextMining": 0.9986824769433464
+        },
+        "hin_Deva-eng_Latn": {
+            "IndicGenBenchFloresBitextMining": 1.0,
+            "Tatoeba": 0.9313333333333333
+        }
+    },
+    "classification": {
+        "hin_Deva": {
+            "MTOPDomainClassification": 0.8391538185729652,
+            "MTOPIntentClassification": 0.539333094299032,
+            "MultiHateClassification": 0.5648,
+            "SIB200Classification": 0.6656862745098039
+        }
+    },
+    "ranking": {
+        "hin_Deva": {
+            "WikipediaRerankingMultilingual": 0.8448005291005292
+        }
+    },
+    "clustering": {
+        "hin_Deva": {
+            "IndicReviewsClusteringP2P": 0.39984689909609206,
+            "SIB200ClusteringS2S": 0.2967855233149193
+        }
+    },
+    "STS": {
+        "hin_Deva": {
+            "SemRel24STSPlus": 0.7257176943362972
+        },
+        "hin_Latn": {
+            "SemRel24STSPlus": 0.5043606619444413
+        }
+    }
+}
