@@ -5,7 +5,8 @@
             "WikipediaRetrievalMultilingual": 0.56348,
             "BelebelePlusRetrieval": 0.73315,
             "MLQAPlusRetrieval": 0.4246,
-            "XQuADPlusRetrieval": 0.79719
+            "XQuADPlusRetrieval": 0.79719,
+            "MIRACLRetrieval": 0.20271
         },
         "eng_Latn-hin_Deva": {
             "XPQARetrieval": 0.24974,

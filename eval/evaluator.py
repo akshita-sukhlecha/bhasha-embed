@@ -3,8 +3,8 @@ import os
 
 import mteb
 from sentence_transformers import SentenceTransformer
-from mteb.tasks import NFCorpus, MLQuestionsRetrieval, XPQARetrieval, MIRACLRetrieval
-from mteb.tasks import TatoebaBitextMining, WikipediaRerankingMultilingual, MIRACLReranking
+from mteb.tasks import NFCorpus, MLQuestionsRetrieval, XPQARetrieval
+from mteb.tasks import TatoebaBitextMining, WikipediaRerankingMultilingual
 from mteb.tasks import IndicReviewsClusteringP2P, SIB200ClusteringFast
 from mteb.tasks import MTOPDomainClassification, MTOPIntentClassification, MultiHateClassification, \
     SIB200Classification
@@ -15,7 +15,6 @@ tasks = {
     "retrieval": {
         "hin_Deva-hin_Deva": [
             XPQARetrieval(hf_subsets=["hin-hin"]),
-            MIRACLRetrieval(hf_subsets=["hi"])
         ],
         "eng_Latn-eng_Latn": [
             NFCorpus(),
@@ -43,8 +42,7 @@ tasks = {
     },
     "ranking": {
         "hin_Deva": [
-            WikipediaRerankingMultilingual(hf_subsets=["hi"]),
-            MIRACLReranking(hf_subsets=["hi"])
+            WikipediaRerankingMultilingual(hf_subsets=["hi"])
         ]
     },
     "clustering": {
@@ -126,6 +124,8 @@ for task_type, lang_to_tasks_map in tasks.items():
             evaluation = mteb.MTEB(tasks=[task])
             if task.metadata.name == "XQuADPlusRetrieval":
                 eval_split = "validation"
+            elif task.metadata.name in ["MIRACLReranking", "MIRACLRetrieval"]:
+                eval_split = "dev"
             else:
                 eval_split = "test"
             task_results = evaluation.run(model, output_folder=temp_output_folder, eval_splits=[eval_split],

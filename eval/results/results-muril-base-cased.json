@@ -4,7 +4,8 @@
             "XPQARetrieval": 0.56191,
             "BelebelePlusRetrieval": 0.39519,
             "MLQAPlusRetrieval": 0.20635,
-            "XQuADPlusRetrieval": 0.64276
+            "XQuADPlusRetrieval": 0.64276,
+            "MIRACLRetrieval": 0.08428
         },
         "eng_Latn-eng_Latn": {
             "NFCorpus": 0.03363,
