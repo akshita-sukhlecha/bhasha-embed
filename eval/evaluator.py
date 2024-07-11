@@ -14,7 +14,7 @@ from mteb_custom_tasks import MLQAPlusRetrieval, XQuADPlusRetrieval, BelebelePlu
 tasks = {
     "retrieval": {
         "hin_Deva-hin_Deva": [
-            XPQARetrieval(hf_subsets=["hin-hin"])
+            XPQARetrieval(hf_subsets=["hin-hin"]),
         ],
         "eng_Latn-eng_Latn": [
             NFCorpus(),
@@ -42,7 +42,7 @@ tasks = {
     },
     "ranking": {
         "hin_Deva": [
-            WikipediaRerankingMultilingual(hf_subsets=["hi"]),
+            WikipediaRerankingMultilingual(hf_subsets=["hi"])
         ]
     },
     "clustering": {
@@ -96,30 +96,41 @@ models = [
     {"name": "sentence-transformers/LaBSE", "revision": "e34fab64a3011d2176c99545a93d5cbddc9a91b7"},
     {"name": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
      "revision": "79f2382ceacceacdf38563d7c5d16b9ff8d725d6"},
-    {"name": "google/muril-base-cased", "revision": "afd9f36c7923d54e97903922ff1b260d091d202f"}
+    {"name": "google/muril-base-cased", "revision": "afd9f36c7923d54e97903922ff1b260d091d202f"},
+    {"name": "ai4bharat/IndicBERTv2-MLM-Sam-TLM", "revision": "605bfff4a100307f97197c899e6e28c366b1f6c4"},
+    {"name": "ai4bharat/IndicBERTv2-MLM-only", "revision": "51eb711a4c4b29949298b3f46971b5e1a0fd963f"},
 ]
 model_idx = 0
 
 model_name, model_revision = models[model_idx]["name"], models[model_idx]["revision"]
 model = mteb.get_model(model_name, revision=model_revision)
-output_folder = "results/" + model_name.replace("/", "-")
 
 results = {}
-os.makedirs(output_folder, exist_ok=True)
+
+temp_output_folder = "temp_results"
+os.makedirs(temp_output_folder, exist_ok=True)
+results_file = f"results/results-{model_name.split('/')[1]}.json"
+if os.path.exists(results_file):
+    with open(results_file) as fp:
+        results = json.load(fp)
 
 for task_type, lang_to_tasks_map in tasks.items():
-    results[task_type] = {}
+    results[task_type] = results.get(task_type, {})
     for lang_pair, task_list in lang_to_tasks_map.items():
-        results[task_type][lang_pair] = {}
+        results[task_type][lang_pair] = results[task_type].get(lang_pair, {})
         for task in task_list:
+            if task.metadata.name in results[task_type][lang_pair]:
+                continue
             evaluation = mteb.MTEB(tasks=[task])
             if task.metadata.name == "XQuADPlusRetrieval":
                 eval_split = "validation"
+            elif task.metadata.name in ["MIRACLReranking", "MIRACLRetrieval"]:
+                eval_split = "dev"
             else:
                 eval_split = "test"
-            task_results = evaluation.run(model, output_folder=output_folder, eval_splits=[eval_split],
+            task_results = evaluation.run(model, output_folder=temp_output_folder, eval_splits=[eval_split],
                                           overwrite_results=True)
             results[task_type][lang_pair][task.metadata.name] = task_results[0].scores[eval_split][0]["main_score"]
 
-            with open(output_folder + "/overall_results.json", "w") as fp:
+            with open(results_file, "w") as fp:
                 fp.write(json.dumps(results, indent=4))
